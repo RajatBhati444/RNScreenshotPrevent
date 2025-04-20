@@ -1,20 +1,16 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import Toggle from './Modules/ScreenshotPreventModule/Components/Toggle/Toggle';
-import NativeRNScreenshotPrevent from '../specs/NativeRNScreenshotPrevent';
-
-export const enable = () => {
-  NativeRNScreenshotPrevent.enable();
-};
-export const disable = () => {
-  NativeRNScreenshotPrevent.disable();
-};
+import AppStateProvider from './AppState/AppStateContext';
+import colors from './constants/colors';
 
 function App(): React.JSX.Element {
   return (
-    <SafeAreaView style={styles.container}>
-      <Toggle />
-    </SafeAreaView>
+    <AppStateProvider>
+      <SafeAreaView style={styles.container} testID="app-safe-area">
+        <Toggle />
+      </SafeAreaView>
+    </AppStateProvider>
   );
 }
 
@@ -23,7 +19,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
   },
   spacer: {
     height: 50,
