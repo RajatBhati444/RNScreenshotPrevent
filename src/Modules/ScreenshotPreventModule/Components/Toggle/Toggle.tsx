@@ -101,7 +101,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#000',
     marginLeft: 8,
-    // width: 100,
   },
   touchableStyle: {borderRadius: 40, width: 150},
 });
